@@ -1,0 +1,14 @@
+<launch>
+  <!-- Arguments -->
+  <!--<arg name="map_file" default="$(find tx2_navigation)/maps/mymap.yaml"/>-->
+  <!-- Map server -->
+  <!--<node pkg="map_server" name="clean_map_server" type="map_server" args="$(arg map_file)" ns="cover_clean">
+  </node>-->
+
+
+  <node pkg="tx2_cover_clean" type="cover_planner" respawn="true" name="cover_planner" output="screen" clear_params="true">
+    <rosparam file="$(find tx2_cover_clean)/config/costmap_common_params.yaml" command="load" ns="cleaning_costmap" />
+    <rosparam file="$(find tx2_cover_clean)/config/clean_planner.yaml" command="load" />
+  </node>
+  
+</launch>

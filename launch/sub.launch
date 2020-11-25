@@ -1,0 +1,11 @@
+<launch>
+  <!--include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"/-->
+
+  <!--include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch"/-->
+
+  <node pkg="tx2_cover_clean" type="sub_clean" respawn="true" name="sub_clean" output="screen" clear_params="true">
+    <rosparam file="$(find tx2_cover_clean)/param/costmap_common_params.yaml" command="load" ns="cleaning_costmap" />
+    <rosparam file="$(find tx2_cover_clean)/param/cleaning_costmap_params.yaml" command="load" />
+  </node>
+  
+</launch>
