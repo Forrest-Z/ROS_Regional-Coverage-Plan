@@ -1,0 +1,8 @@
+cleaning_plan_nodehandle:   
+   robot_radius: 0.7  #0.5
+   plan_interval: 0.5 #0.3
+   step_forward: 0.2  #0.2
+   robot_length: 0.8
+   robot_width: 0.8
+
+   use_rect: false
